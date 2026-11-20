@@ -1,6 +1,6 @@
 <div align="center">
 
-<img width="1200" height="475" alt="GHBanner" src="blob:https://aistudio.google.com/befb0166-6934-43cc-8594-329747eef867" />
+<img width="2000" height="1324" alt="aether-logo-colore" src="https://github.com/user-attachments/assets/f9234652-6ea1-4edb-b046-3d852d8e106c" />
 
 Aether
 Your new way to watch tv, movies and series.
