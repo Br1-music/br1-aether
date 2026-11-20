@@ -1,6 +1,8 @@
 <div align="center">
 
-<img width="2000" height="1324" alt="aether-logo-colore" src="https://github.com/user-attachments/assets/f9234652-6ea1-4edb-b046-3d852d8e106c" />
+
+https://github.com/user-attachments/assets/ddb12a32-b03f-41bd-8a15-761f9ecf9d88
+
 
 Aether
 Your new way to watch tv, movies and series.
