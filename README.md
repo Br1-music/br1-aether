@@ -1,7 +1,7 @@
 <div align="center">
 
 
-<img width="1640" height="624" alt="aether-copertina-facebook" src="https://github.com/user-attachments/assets/854039bf-8f97-44f1-be10-63f54223b5e6" />
+<img width="640" height="360" alt="media_1795608096062_d138e50d" src="https://github.com/user-attachments/assets/792c072d-4e2f-4603-ac4d-ad5676ad41b1" />
 
 
 Aether
