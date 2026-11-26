@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Download ultima release...</title>
+  <script>
+    // MODIFICA QUI CON I TUOI DATI GITHUB:
+    const utente = "Br1-music";
+    const repository = "br1-aether";
+
+    fetch(`https://github.com{utente}/${repository}/releases/latest`)
+      .then(response => response.json())
+      .then(data => {
+        const apk = data.assets.find(asset => asset.name.endsWith('.apk'));
+        if (apk) {
+          window.location.href = apk.browser_download_url;
+        } else {
+          document.body.innerText = "Nessun APK trovato nell'ultima release.";
+        }
+      })
+      .catch(() => {
+        document.body.innerText = "Errore nel recupero della release.";
+      });
+  </script>
+</head>
+<body>
+  <p>Avvio del download dell'ultima versione...</p>
+</body>
+</html>
