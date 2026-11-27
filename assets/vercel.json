@@ -1,8 +1,0 @@
-{
-  "rewrites": [
-    {
-      "source": "/api/contact",
-      "destination": "https://formspree.io/f/xzerqpjy"
-    }
-  ]
-}
