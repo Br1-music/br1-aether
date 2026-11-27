@@ -364,15 +364,20 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     e.preventDefault();
     var d=Object.fromEntries(new FormData(f).entries());
     if(d.sito)return;
-    if(!d.nome.trim()||!/^\S+@\S+\.\S+$/.test(d.email)||d.messaggio.trim().length<5){say('Controlla nome, email e messaggio.','er');return}
+    var nome=(d.nome||'').trim();
+    var email=(d.email||'').trim();
+    var messaggio=(d.messaggio||'').trim();
+    if(!nome){say('Inserisci il tuo nome.','er');return}
+    if(!/^\S+@\S+\.\S+$/.test(email)){say('Inserisci un indirizzo email valido.','er');return}
+    if(!messaggio){say('Scrivi un messaggio.','er');return}
     if(!ENDPOINT){
-      var body='Nome: '+d.nome+'\nEmail: '+d.email+'\n\n'+d.messaggio;
+      var body='Nome: '+nome+'\nEmail: '+email+'\n\n'+messaggio;
       location.href='mailto:'+EMAIL+'?subject='+encodeURIComponent('[Aether] '+d.argomento)+'&body='+encodeURIComponent(body);
       say('Si è aperta la tua app di posta: premi Invia per spedire.','ok');return;
     }
     var b=f.querySelector('button');b.disabled=true;say('Invio in corso…');
     fetch(ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},
-      body:JSON.stringify({name:d.nome,email:d.email,argomento:d.argomento,_subject:'[Aether] '+d.argomento,message:d.messaggio})})
+      body:JSON.stringify({name:nome,email:email,argomento:d.argomento,_subject:'[Aether] '+d.argomento,message:messaggio})})
     .then(function(r){if(!r.ok)throw 0;f.reset();say('Messaggio inviato, grazie! Ti rispondiamo presto.','ok')})
     .catch(function(){say('Invio non riuscito. Riprova o scrivi a '+EMAIL,'er')})
     .finally(function(){b.disabled=false});
@@ -453,9 +458,6 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     },{threshold:.4}).observe(sec);
   }else{sec.classList.add('in');start()}
 })();
-</script>
-</body>
-</html>
 </script>
 </body>
 </html>
